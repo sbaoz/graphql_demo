@@ -1,5 +1,21 @@
 .App {
   text-align: center;
+  padding: 10px;
+}
+
+.demo-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.demo-item input, select, button {
+  display: block;
+  margin: 5px auto;
+}
+
+.demo-item:last-child {
+  margin-bottom: 0;
 }
 
 .App-logo {
