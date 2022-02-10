@@ -1,7 +1,7 @@
 # Query入口
 type Query {
     hello: String
-    user(id: String): User
+    user(id: ID): User
     users: [User]!
 }
 

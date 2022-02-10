@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-01-10 15:22:33
- * @LastEditTime: 2022-01-18 17:13:52
+ * @LastEditTime: 2022-01-20 16:27:47
  * @LastEditors: Please set LastEditors
  * @Description: 数据库操作封装
  * @FilePath: \graphql_demo\src\db\connect.js
@@ -45,7 +45,6 @@ exports.find = function (collectionName, data, callback) {
           throw err;
         }
         callback(result);
-        mongoClient.close();
       });
   });
 };
@@ -62,7 +61,6 @@ exports.findOne = function (collectionName, data, callback) {
     db.collection(collectionName).findOne(data, (err, result) => {
       if (err) throw err;
       callback(result);
-      mongoClient.close();
     })
   );
 };
@@ -79,7 +77,6 @@ exports.insertOne = function (collectionName, data, callback) {
     db.collection(collectionName).insertOne(data, (err, result) => {
       if (err) throw err;
       callback(data);
-      mongoClient.close();
     })
   );
 };
@@ -96,7 +93,6 @@ exports.deleteOne = function (collectionName, data, callback) {
     db.collection(collectionName).deleteOne(data, (err, results) => {
       if (err) throw err;
       callback(data);
-      mongoClient.close();
     })
   );
 };
@@ -114,7 +110,6 @@ exports.updateOne = function (collectionName, data, targ, callback) {
     db.collection(collectionName).updateOne(data, targ, (err, results) => {
       if (err) throw err;
       callback(targ["$set"]);
-      mongoClient.close();
     })
   );
 };
